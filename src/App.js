@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box } from '@mui/material';
+import React from 'react';
+import { DragonBar } from './components/DragonBar';
+import PreferencesGrid from './components/PreferencesGrid';
+import Split from 'react-split';
+import Styles from './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <Box sx={{ height: `100vh`, display: 'flex', flexFlow: 'column' }}>
+      <DragonBar />
+      <Split
+        className="split"
+        direction="vertical"
+        style={{ height: '100vh' }}
+        sizes={[100,1]}
+      >
+        <PreferencesGrid />
+        <Box>
+          <Split direction='horizontal' style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
+            <div>test1</div>
+            <div>test2</div>
+          </Split>
+        </Box>
+      </Split>
+    </Box>;
 }
 
 export default App;
