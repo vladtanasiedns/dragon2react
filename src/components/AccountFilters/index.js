@@ -1,5 +1,6 @@
 import { Box, Button, Dialog, DialogActions, DialogContent, Grid, DialogTitle, TextField, Autocomplete } from "@mui/material";
 import React, { useState } from "react"
+import { GridColumn } from "../../utils/GridColumn";
 
 export const AccountsFiltersDialog = () => {
     const [open, setOpen] = useState(false);
@@ -66,19 +67,9 @@ export const AccountsFiltersDialog = () => {
         }   
     }
 
-    const GridColumn = (props) => {
-        return <>
-            <Grid item>
-                <Grid container direction='column' spacing={1}>
-                    {React.Children.map(props.children, (child) => <Grid item>{ child }</Grid>)}
-                </Grid>
-            </Grid>
-        </>
-    }
-
     return <>
         <Box>
-          <Button sx={{ my: 2, color: 'white', display: 'block' }} onClick={handleClickOpen}>
+          <Button sx={{ my: 2, color: 'white', display: 'block' }} onClick={handleClickOpen} size='small'>
             Account Filters 
           </Button>
             <Dialog open={open} onClose={handleClose} fullWidth maxWidth='lg'>
@@ -310,8 +301,8 @@ export const AccountsFiltersDialog = () => {
                     </Grid>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>Cancel</Button>
-                    <Button onClick={handleClose}>Subscribe</Button>
+                    <Button onClick={handleClose} variant="contained">Cancel</Button>
+                    <Button onClick={handleClose} variant="contained">Apply</Button>
                 </DialogActions>
             </Dialog>
         </Box>

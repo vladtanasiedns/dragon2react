@@ -3,10 +3,12 @@ import React from 'react';
 import { DragonBar } from './components/DragonBar';
 import PreferencesGrid from './components/PreferencesGrid';
 import Split from 'react-split';
-import Styles from './App.css';
+import DebtorView from './components/DebtorView';
+import WorkCardView from './components/WorkcardWidgets/WorkCardView';
+import './App.css';
 
 function App() {
-  return <Box sx={{ height: `100vh`, display: 'flex', flexFlow: 'column' }}>
+  return <Box sx={{ height: `100vh`, display: 'flex', flexFlow: 'column', overflow: 'hidden' }}>
       <DragonBar />
       <Split
         className="split"
@@ -17,8 +19,12 @@ function App() {
         <PreferencesGrid />
         <Box>
           <Split direction='horizontal' style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
-            <div>test1</div>
-            <div>test2</div>
+            <div>
+              <DebtorView />
+            </div>
+            <div>
+              <WorkCardView />
+            </div>
           </Split>
         </Box>
       </Split>

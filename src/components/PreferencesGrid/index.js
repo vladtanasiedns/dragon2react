@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { DataGridPro } from '@mui/x-data-grid-pro';
+import { DataGridPro, GridToolbar } from '@mui/x-data-grid-pro';
 import PlaceHolderData from '../../placeholderdata';
 import { Box } from '@mui/system';
 
@@ -28,6 +28,9 @@ const PreferencesGrid = () => {
             columns={columns} 
             rows={PlaceHolderData.debtors.items}
             density='compact'
+            slots={{ toolbar: GridToolbar }}
+            checkboxSelection 
+            disableRowSelectionOnClick
         />
     </Box>
 }
