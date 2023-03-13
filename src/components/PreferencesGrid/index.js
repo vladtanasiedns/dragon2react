@@ -1,9 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { DataGridPro, GridToolbar } from '@mui/x-data-grid-pro';
-import PlaceHolderData from '../../placeholderdata';
+// import PlaceHolderData from '../../placeholderdata';
 import { Box } from '@mui/system';
+import { actions, DebtorContext } from '../../context/DebtorContext';
 
 const PreferencesGrid = () => {
+    const { state, dispatch } = useContext(DebtorContext);
+    const [debtors, setDebtors] = useState([]);
+
     const columns = [
         { field: 'debtorNumber', headerName: 'Debtor Number', minWidth: 150 },
         { field: 'name', headerName: 'Name', minWidth: 150 },
@@ -20,13 +24,17 @@ const PreferencesGrid = () => {
     ]
 
     useEffect(() => {
+        dispatch({
+            type: actions.GET_DEBTORS
+        });
+        setDebtors(state.preferencesList);
     }, []);
 
     return <Box sx={{ height: '100%' }}>
         <DataGridPro 
             getRowId={row => row.totalPastDue}
             columns={columns} 
-            rows={PlaceHolderData.debtors.items}
+            rows={state.preferencesList}
             density='compact'
             slots={{ toolbar: GridToolbar }}
             checkboxSelection 
