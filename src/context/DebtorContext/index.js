@@ -4,13 +4,15 @@ import placeholderdata from '../../placeholderdata';
 const initialState = {
     debtorNumber: '',
     preferencesList: [],
-    currentDebtor: {}
+    currentDebtor: {},
+    currentDebtorNotes: []
 };
 
 export const actions = Object.freeze({
     GET_DEBTORS: 'GET_DEBTORS',
     SELECT_DEBTOR: 'SELECT_DEBTOR',
-    SET_DEBTOR_NUMBER: 'SET_DEBTOR_NUMBER'
+    SET_DEBTOR_NUMBER: 'SET_DEBTOR_NUMBER',
+    SELECT_DEBTOR_NOTES: 'SELECT_DEBTOR_NOTES'
 });
 
 const reducer = (state, action) => {
@@ -30,6 +32,11 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 debtorNumber: action.debtorNumber
+            };
+        case actions.SELECT_DEBTOR_NOTES:
+            return {
+                ...state,
+                currentDebtorNotes: placeholderdata.debtorNotes['0028396']
             };
         default:
             return state;

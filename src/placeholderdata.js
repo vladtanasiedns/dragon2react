@@ -1192,8 +1192,7 @@ const data = {
         }
     ],
     debtorNotes: {
-      "0028396" : {
-        "notes": [
+      "0028396" : [
           {
             "date" : "2022-12-22 10:29",
             "user" : "EDI",
@@ -1382,7 +1381,6 @@ const data = {
             "dat_type" : "A"
           }
         ]
-      }
     }
 }
 
