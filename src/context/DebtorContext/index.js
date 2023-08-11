@@ -1,5 +1,4 @@
 import { createContext, useReducer } from 'react';
-import placeholderdata from '../../placeholderdata';
 
 const initialState = {
     debtorNumber: '',
@@ -18,7 +17,7 @@ const reducer = (state, action) => {
         case actions.GET_DEBTORS:
             return {
                 ...state,
-                preferencesList: placeholderdata.debtors.items
+                preferencesList: action.payload
             }
         case actions.SELECT_DEBTOR:
             const debtor = state.preferencesList.filter(debtor => debtor.debtorNumber === action.debtorNumber)[0];

@@ -32,7 +32,6 @@ const DebtorDataView = () => {
                     <Typography>Test: TEST</Typography>
                 </GridColumn>
                 <Grid><button onClick={getDebtor}>Get a debtor!</button></Grid>
-                
         </Grid>
     </>
 }

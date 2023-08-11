@@ -18,7 +18,6 @@ function App() {
         style={{ height: '100vh' }}
         sizes={[100,1]}
       >
-        
           <PreferencesGrid />
           <Box>
             <Split direction='horizontal' style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
