@@ -32,11 +32,6 @@ root.render(
   </Auth0Provider>
 );
 
-//AuthO secrets
-// audience = https://dev-backoffice.dandsltd.com/api/
-// client id = UPpJ3BOrFKIXk2F68ZmW1PGiSQLaVClB
-// domain = dev-agqj-vzv.us.auth0.com
-
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
